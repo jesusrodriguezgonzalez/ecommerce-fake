@@ -6,6 +6,7 @@ import {
   Container,
   Form,
   FormControl,
+  Pagination,
 } from "react-bootstrap";
 
 export function NavbarHome() {

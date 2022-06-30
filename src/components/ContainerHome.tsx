@@ -1,3 +1,4 @@
+import { PaginationComponent } from "./pagination/Pagination";
 import { Product } from "./products/Product";
 
 export function ContainerHome() {
@@ -9,6 +10,7 @@ export function ContainerHome() {
           <Product></Product>
         ))}
       </div>
+      <PaginationComponent></PaginationComponent>
     </>
   );
 }
