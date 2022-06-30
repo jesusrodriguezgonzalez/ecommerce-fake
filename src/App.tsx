@@ -1,8 +1,18 @@
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+import { ContainerHome } from "./components/ContainerHome";
+import { Layout } from "./components/core/Layout";
 
 function App() {
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <Layout>
+        <Routes>
+          <Route path="/" element={<ContainerHome />} />
+        </Routes>
+      </Layout>
+    </div>
+  );
 }
 
 export default App;
