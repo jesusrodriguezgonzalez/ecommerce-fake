@@ -1,8 +1,14 @@
 import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+import { Layout } from "./components/core/Layout";
 
 function App() {
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <Layout>
+        <h1>Hola</h1>
+      </Layout>
+    </div>
+  );
 }
 
 export default App;
