@@ -1,10 +1,9 @@
-import { Navbar } from "./Navbar";
+import { NavbarHome } from "./Navbar";
 
 export function Header() {
   return (
     <header>
-      <h1>Ecommerce Tecnology</h1>
-      <Navbar></Navbar>
+      <NavbarHome></NavbarHome>
     </header>
   );
 }

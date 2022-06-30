@@ -1,0 +1,8 @@
+.container-home {
+  display: flex;
+  margin-top: 2rem;
+  margin-left: 2rem;
+  gap: 3rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
