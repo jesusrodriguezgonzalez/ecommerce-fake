@@ -1,5 +1,5 @@
 import { createReducer } from '@reduxjs/toolkit';
-import { iProduct } from '../interfaces/iProduct';
+import { iProduct } from '../../interfaces/iProduct';
 import { loadProducts } from './actions-creator';
 
 const initialState: iProduct[] = [];
