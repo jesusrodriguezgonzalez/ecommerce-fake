@@ -1,11 +1,15 @@
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import { ContainerHome } from "./components/ContainerHome";
 import { Layout } from "./components/core/Layout";
 
 function App() {
   return (
     <div className="App">
       <Layout>
-        <h1>Hola</h1>
+        <Routes>
+          <Route path="/" element={<ContainerHome />} />
+        </Routes>
       </Layout>
     </div>
   );
