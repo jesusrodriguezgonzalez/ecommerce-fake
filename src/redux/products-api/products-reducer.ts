@@ -1,6 +1,6 @@
 import { createReducer } from '@reduxjs/toolkit';
 import { iProduct } from '../../interfaces/iProduct';
-import { loadProducts } from './actions-creator';
+import { loadProducts, loadCategoeries } from './actions-creator';
 
 const initialState: any = {
   products: [],
@@ -14,6 +14,12 @@ export const productsReducer = createReducer(initialState, (builder) =>
       return {
         products: action.payload,
         categories: [...state.categories],
+      };
+    })
+    .addCase(loadCategoeries, (state, action) => {
+      return {
+        products: [...state.products],
+        categories: action.payload,
       };
     })
     .addDefaultCase((state) => state)

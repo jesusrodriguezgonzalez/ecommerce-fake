@@ -1,3 +1,5 @@
+import { iCategoria } from './iCategories';
+
 export interface iProduct {
   category: iCategoria;
   description: string;
@@ -5,10 +7,4 @@ export interface iProduct {
   images: Array<String>;
   price: number;
   title: string;
-}
-
-export interface iCategoria {
-  id: number;
-  name: string;
-  image: string;
 }
