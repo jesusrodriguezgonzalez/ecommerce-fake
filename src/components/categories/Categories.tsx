@@ -1,19 +1,14 @@
-import { useEffect } from 'react';
-import { Button, Form, FormControl } from 'react-bootstrap';
-import { useDispatch } from 'react-redux';
-import { loadProducts } from '../../redux/products-api/actions-creator';
-import { getAllCategories } from '../../services/api';
-export function Categories() {
-  const dispatch = useDispatch();
+import { Button, Form } from 'react-bootstrap';
+import { iCategoria } from '../../interfaces/iCategories';
 
-  //   useEffect(() => {
-  //     getAllCategories().then((data) => dispatch(loadProducts(data.data)));
-  //   });
+export function Categories({ categories }: { categories: iCategoria[] }) {
   return (
     <Form className="d-flex">
-      <Button variant="outline-success">Categoria 1</Button>
-      <Button variant="outline-success">Categoria 2</Button>
-      <Button variant="outline-success">Categoria 3</Button>
+      {categories.map((item) => (
+        <Button className="margin" variant="outline-success">
+          {item.name}
+        </Button>
+      ))}
     </Form>
   );
 }

@@ -7,3 +7,7 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.margin {
+  margin-left: 1rem;
+}

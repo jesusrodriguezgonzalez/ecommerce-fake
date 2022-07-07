@@ -1,9 +1,13 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { iCategoria } from '../interfaces/iCategories';
 import { iProduct } from '../interfaces/iProduct';
 import { Istate } from '../interfaces/state';
-import { loadProducts } from '../redux/products-api/actions-creator';
-import { getAllProducts } from '../services/api';
+import {
+  loadCategoeries,
+  loadProducts,
+} from '../redux/products-api/actions-creator';
+import * as api from '../services/api';
 import { CarrouselProducts } from './carrousel/CarrouselProducts';
 import { Categories } from './categories/Categories';
 import { PaginationComponent } from './pagination/Pagination';
@@ -15,15 +19,24 @@ export function ContainerHome() {
     (state) => (state as Istate).products
   );
 
+  const categories: iCategoria[] = useSelector(
+    (state) => (state as Istate).categories
+  );
+
   useEffect(() => {
-    getAllProducts().then((data) => dispatch(loadProducts(data.data)));
+    api
+      .getAllProducts()
+      .then((products) => dispatch(loadProducts(products.data)));
+    api
+      .getAllCategories()
+      .then((categories) => dispatch(loadCategoeries(categories.data)));
   }, []);
 
   return (
     <>
       <CarrouselProducts />
       <div className="categories-container">
-        <Categories />
+        {categories.length > 0 && <Categories categories={categories} />}
       </div>
 
       <div className="container-home">
