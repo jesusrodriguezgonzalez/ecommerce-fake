@@ -1,4 +1,5 @@
-.container-home {
+.container-home,
+.categories-container {
   display: flex;
   margin-top: 2rem;
   margin-left: 2rem;
